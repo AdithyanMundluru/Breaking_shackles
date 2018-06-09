@@ -4,13 +4,21 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 <script type="text/javascript" src="js/shared/angular.js"></script>
-
+<script type="text/javascript" src="js/user/Properties.js"></script>
 <script type="text/javascript" src="js/user/controller.js"></script>
 
-<script type="text/javascript" src="js/user/Properties.js"></script>
+
 </head>
 <body ng-controller="myController">
-<input
 
+<h1>Registration</h1>
+<input type="text" ng-model="UserName" required="required">
+<input type="text" ng-model="Password" required="required">
+<input type="text" ng-model="Name" required="required">
+<input type="text" ng-model="NoadadeId" required="required">
+<input type="text" ng-model="Status" required="required">
+
+<h1>{{message}}</h1>
+<button ng-click="accept()">Registor</button>
 </body>
 </html>
