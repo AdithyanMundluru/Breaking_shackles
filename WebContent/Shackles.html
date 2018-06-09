@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<html ng-app="myModule">
+<head>
+<title>Breaking Shackles</title>
+<meta charset="utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, user-scalable=no" />
+<script type="text/javascript" src="js/shared/angular.js"></script>
+<script type="text/javascript" src="js/user/controller.js"></script>
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body class="is-preload" ng-controller="myController">
+
+	<!-- Header -->
+	<header id="header">
+		<a class="logo" href="Shackles.html">Breaking Shackles</a>
+		<nav>
+			<a href="#menu">Menu</a>
+		</nav>
+	</header>
+
+	<!-- Nav -->
+	<nav id="menu">
+		<ul class="links">
+			<li><a href="Shackles.html">Home</a></li>
+			<li><a href="elements.html">Sing Me Up</a></li>
+			<li><a href="generic.html">NGO Details</a></li>
+
+		</ul>
+	</nav>
+
+	<!-- Banner -->
+	<section id="banner">
+		<div class="inner" >
+			<h1>Breaking Shackles</h1>
+			<p>
+				Lets Make Life Better Simple and Significant<br /> <br></br>
+			<h2>Fund Available € {{Money}} Counting</h2>
+			<div class="col-12">
+				<form action="donate.html">
+					<input type="submit" value="Donate now" />
+				</form>
+			</div>
+		</div>
+		<video autoplay loop muted playsinline src="images/banner.mp4"></video>
+	</section>
+
+	<!-- Highlights -->
+	<section class="wrapper">
+		<div class="inner">
+			<header class="special">
+				<h2>Our Mission</h2>
+				<p>.There are approx 150 million orphans around the world
+					lacking even the most basic necesities, even though a huge amount
+					of charity ( is spent every year. This is primarily because most of
+					the money is either unaccounted, middleman eats up the funds, or
+					there is uneven fund distribution across organizations.</p>
+			</header>
+			<div class="highlights">
+				<section>
+					<div class="content">
+						<header>
+							<a href="Dashboard.html" class="icon fa-vcard-o"><span
+								class="label">Icon</span></a>
+							<h3>NGO Name 1</h3>
+						</header>
+						<p>Details of NGO 1</p>
+					</div>
+				</section>
+				<section>
+					<div class="content">
+						<header>
+							<a href="Dashboard.html" class="icon fa-vcard-o"><span
+								class="label">Icon</span></a>
+							<h3>NGO Name 2</h3>
+						</header>
+						<p>Details of NGO 2</p>
+					</div>
+				</section>
+				<section>
+					<div class="content">
+						<header>
+							<a href="Dashboard.html" class="icon fa-vcard-o"><span
+								class="label">Icon</span></a>
+							<h3>Details of NGO 3</h3>
+						</header>
+						<p>Details of NGO 3</p>
+					</div>
+				</section>
+	</section>
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+</body>
+</html>
