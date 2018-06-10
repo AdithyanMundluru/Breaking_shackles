@@ -1,23 +1,20 @@
 <!DOCTYPE HTML>
-<!--
-	Industrious by TEMPLATED
-	templated.co @templatedco
-	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
--->
-<html>
+<html ng-app="myModule">
 	<head>
 		<title>Generic Page - Industrious by TEMPLATED</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<script type="text/javascript" src="js/shared/angular.js"></script>
+        <script type="text/javascript" src="js/user/controller.js"></script>
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 	</head>
-	<body class="is-preload">
+	<body class="is-preload" ng-controller="myController">
 
 		<!-- Header -->
 			<header id="header">
-				<a class="logo" href="index.html">Industrious</a>
+				<a class="logo" href="Shackles.html">Breaking Shackles</a>
 				<nav>
 					<a href="#menu">Menu</a>
 				</nav>
@@ -26,25 +23,49 @@
 		<!-- Nav -->
 			<nav id="menu">
 				<ul class="links">
-					<li><a href="index.html">Home</a></li>
-					<li><a href="elements.html">Elements</a></li>
-					<li><a href="generic.html">Generic</a></li>
+					<li><a href="Shackles.html">Home</a></li>
+					<li><a href="elements.html">Sign Up as NGO</a></li>
+					<li><a href="generic.html">Requester</a></li>
 				</ul>
 			</nav>
 
 		<!-- Heading -->
 			<div id="heading" >
-				<h1>About Us</h1>
-			</div>
+				<h1>Requesting</h1>
+			</div>e
 
 		<!-- Main -->
 			<section id="main" class="wrapper">
 				<div class="inner">
 					<div class="content">
-						<header>
-							<h2>To be updated</h2>
-						</header>
-						<p>Work in progress. </p>
+					
+										<form method="post" action="#">
+										<div class="row gtr-uniform">
+											<div class="col-6 col-12-xsmall">
+												<input type="text"  name="name" id="name"  placeholder="Name" ng-model="RequestName"/>
+											</div>
+											<div class="col-6 col-12-xsmall">
+												<input type="Email"  name="email" id="mob"   placeholder="Email"  />
+											</div>
+											<div class="col-6 col-12-xsmall">
+													<input type="number" name="amount" id="amount"  placeholder="Enter an Amount" ng-model="Amount"/>
+											</div>
+											<div class="col-12">
+													<input type="Mobile"  name="mob" id="mob"   placeholder="Mobile Number" ng-model="MobileNo" />
+											</div>									
+											<!-- Break -->
+											<div class="col-12">
+											<button ng-click="Request()">Request Funds</button>
+											
+												&nbsp;&nbsp;&nbsp;
+													<input type="reset" value="Reset" />
+													
+												
+												<br><br>
+												{{message}}
+											</div>
+										</div>
+									</form>
 					</div>
 				</div>
 			</section>

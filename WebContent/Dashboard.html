@@ -1,439 +1,194 @@
-<!DOCTYPE HTML>
 <html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Dashboard</title>
+<head>
 
-		<style type="text/css">
-		</style>
-	</head>
-	<body>
-<script src="//solon.prd/files/P/Global/Users/C45800/Userdata/Documents/Highcharts-6.1.0/code/highcharts.js"></script>
-<script src="//solon.prd/files/P/Global/Users/C45800/Userdata/Documents/Highcharts-6.1.0/code/modules/data.js"></script>
-<script src="//solon.prd/files/P/Global/Users/C45800/Userdata/Documents/Highcharts-6.1.0/code/modules/drilldown.js"></script>
-<script src="//solon.prd/files/P/Global/Users/C45800/Userdata/Documents/Highcharts-6.1.0/code/highcharts-3d.js"></script>
-<script src="//solon.prd/files/P/Global/Users/C45800/Userdata/Documents/Highcharts-6.1.0/code/modules/exporting.js"></script>
-<script src="//solon.prd/files/P/Global/Users/C45800/Userdata/Documents/Highcharts-6.1.0/code/modules/export-data.js"></script>
 
-<div id="TopLeft" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
-<div id="TopRight" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
-<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+<script type="text/javascript" src="js/shared/angular.js"></script>
+<script type="text/javascript" src="js/user/controller.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.checked {
+    color: orange;
+}
+</style>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+</head>
+<body>
+<div id="About" align="center" style="margin-top: 20px;">
+<h1><span style="color:blue"><font size="16"><b><i>Uthan</i></b></font></span></h1>
+<br>
+<div class="col-sm-6">
+<img alt="" src="images/Happy_kids_2.jpg" width="">
+<br><br><br><br><br>
+</div>
+<div class="col-sm-6">
+<p>
+<h2>Total Money Requested : 234,231</h2> <br>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span>
+<h3>Uthan takes great pride in  financial efficiency and accountability. They work to maximize the value of every dollar we receive. More than 90 percent of our expended resources - among the highest of all philanthropic organizations - support our poverty-fighting projects around the world. Less than 10 percent of expended resources go toward administrative and fundraising costs.</h3>
+</p>
+</div>
+<div class="col-sm-12" style="margin-top: 10px">
+<div class="col-sm-1"></div>
+<div class="col-sm-5" align="center" id="right" style="min-width: 310px; height: 400px; max-width: 600px;  "></div>
+<div class="col-sm-5" align="center" id="left" style="min-width: 310px; height: 400px; max-width: 600px; "></div>
+
+</div>
+<br>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="code/highcharts.js"></script>
+<script src="code/modules/exporting.js"></script>
+<script src="code/modules/export-data.js"></script>
+
+
+
 
 
 
 		<script type="text/javascript">
-		Highcharts.chart('container', {
-		    chart: {
-		        zoomType: 'xy'
-		    },
-		    title: {
-		        text: 'Average Monthly Temperature and Rainfall in Tokyo'
-		    },
-		    subtitle: {
-		        text: 'Source: WorldClimate.com'
-		    },
-		    xAxis: [{
-		        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-		            'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-		        crosshair: true
-		    }],
-		    yAxis: [{ // Primary yAxis
-		        labels: {
-		            format: '{value}°C',
-		            style: {
-		                color: Highcharts.getOptions().colors[1]
-		            }
-		        },
-		        title: {
-		            text: 'Temperature',
-		            style: {
-		                color: Highcharts.getOptions().colors[1]
-		            }
-		        }
-		    }, { // Secondary yAxis
-		        title: {
-		            text: 'Rainfall',
-		            style: {
-		                color: Highcharts.getOptions().colors[0]
-		            }
-		        },
-		        labels: {
-		            format: '{value} mm',
-		            style: {
-		                color: Highcharts.getOptions().colors[0]
-		            }
-		        },
-		        opposite: true
-		    }],
-		    tooltip: {
-		        shared: true
-		    },
-		    legend: {
-		        layout: 'vertical',
-		        align: 'left',
-		        x: 120,
-		        verticalAlign: 'top',
-		        y: 100,
-		        floating: true,
-		        backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
-		    },
-		    series: [{
-		        name: 'Rainfall',
-		        type: 'column',
-		        yAxis: 1,
-		        data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4],
-		        tooltip: {
-		            valueSuffix: ' mm'
-		        }
 
-		    }, {
-		        name: 'Temperature',
-		        type: 'spline',
-		        data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6],
-		        tooltip: {
-		            valueSuffix: '°C'
-		        }
-		    }]
-		});
-		//Chart 2
-		Highcharts.chart('TopRight', {
-		    chart: {
-		        type: 'pie',
-		        options3d: {
-		            enabled: true,
-		            alpha: 45
-		        }
-		    },
-		    title: {
-		        text: 'Contents of Highsoft\'s weekly fruit delivery'
-		    },
-		    subtitle: {
-		        text: '3D donut in Highcharts'
-		    },
-		    plotOptions: {
-		        pie: {
-		            innerSize: 100,
-		            depth: 45
-		        }
-		    },
-		    series: [{
-		        name: 'Delivered amount',
-		        data: [
-		            ['Bananas', 8],
-		            ['Kiwi', 3],
-		            ['Mixed nuts', 1],
-		            ['Oranges', 6],
-		            ['Apples', 8],
-		            ['Pears', 4],
-		            ['Clementines', 4],
-		            ['Reddish (bag)', 1],
-		            ['Grapes (bunch)', 1]
-		        ]
-		    }]
-		});
-// Create the chart
-Highcharts.chart('TopLeft', {
+// Build the chart
+Highcharts.chart('right', {
+    chart: {
+        plotBackgroundColor: null,
+        plotBorderWidth: null,
+        plotShadow: false,
+        type: 'pie'
+    },
+    title: {
+        text: 'Money Spent on Resources (Month of May)'
+    },
+    tooltip: {
+        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+    },
+    plotOptions: {
+        pie: {
+            allowPointSelect: true,
+            cursor: 'pointer',
+            dataLabels: {
+                enabled: false
+            },
+            showInLegend: true
+        }
+    },
+    series: [{
+        name: 'Brands',
+        colorByPoint: true,
+        data: [{
+            name: 'Education',
+            y: 61.41,
+            sliced: true,
+            selected: true
+        }, {
+            name: 'Food',
+            y: 11.84
+        }, {
+            name: 'Clothes',
+            y: 10.85
+        }, {
+            name: 'Sanatory',
+            y: 4.67
+        }, {
+            name: 'Shelter',
+            y: 4.18
+        }, {
+            name: 'Other',
+            y: 7.05
+        }]
+    }]
+});
+
+Highcharts.chart('left', {
     chart: {
         type: 'column'
     },
     title: {
-        text: 'Browser market shares. January, 2018'
+        text: 'Monthly Average Kids Count'
     },
     subtitle: {
-        text: 'Click the columns to view versions. Source: <a href="http://statcounter.com" target="_blank">statcounter.com</a>'
+        text: ''
     },
     xAxis: {
-        type: 'category'
+        categories: [
+            'Jan',
+            'Feb',
+            'Mar',
+            'Apr',
+            'May',
+            'Jun',
+            'Jul',
+            'Aug',
+            'Sep',
+            'Oct',
+            'Nov',
+            'Dec'
+        ],
+        crosshair: true
     },
     yAxis: {
+        min: 0,
         title: {
-            text: 'Total percent market share'
+            text: 'No of Kids'
         }
-
     },
-    legend: {
-        enabled: false
+    tooltip: {
+        headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+        pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+            '<td style="padding:0"><b>{point.y:.1f} Head Count</b></td></tr>',
+        footerFormat: '</table>',
+        shared: true,
+        useHTML: true
     },
     plotOptions: {
-        series: {
-            borderWidth: 0,
-            dataLabels: {
-                enabled: true,
-                format: '{point.y:.1f}%'
-            }
+        column: {
+            pointPadding: 0.2,
+            borderWidth: 0
         }
     },
+    series: [{
+        name: 'Kids',
+        data: [20, 20, 18, 22, 21, 22, 23, 21, 21, 19, 23, 22]
 
-    tooltip: {
-        headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
-        pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}%</b> of total<br/>'
-    },
-
-    "series": [
-        {
-            "name": "Browsers",
-            "colorByPoint": true,
-            "data": [
-                {
-                    "name": "Chrome",
-                    "y": 62.74,
-                    "drilldown": "Chrome"
-                },
-                {
-                    "name": "Firefox",
-                    "y": 10.57,
-                    "drilldown": "Firefox"
-                },
-                {
-                    "name": "Internet Explorer",
-                    "y": 7.23,
-                    "drilldown": "Internet Explorer"
-                },
-                {
-                    "name": "Safari",
-                    "y": 5.58,
-                    "drilldown": "Safari"
-                },
-                {
-                    "name": "Edge",
-                    "y": 4.02,
-                    "drilldown": "Edge"
-                },
-                {
-                    "name": "Opera",
-                    "y": 1.92,
-                    "drilldown": "Opera"
-                },
-                {
-                    "name": "Other",
-                    "y": 7.62,
-                    "drilldown": null
-                }
-            ]
-        }
-    ],
-    "drilldown": {
-        "series": [
-            {
-                "name": "Chrome",
-                "id": "Chrome",
-                "data": [
-                    [
-                        "v65.0",
-                        0.1
-                    ],
-                    [
-                        "v64.0",
-                        1.3
-                    ],
-                    [
-                        "v63.0",
-                        53.02
-                    ],
-                    [
-                        "v62.0",
-                        1.4
-                    ],
-                    [
-                        "v61.0",
-                        0.88
-                    ],
-                    [
-                        "v60.0",
-                        0.56
-                    ],
-                    [
-                        "v59.0",
-                        0.45
-                    ],
-                    [
-                        "v58.0",
-                        0.49
-                    ],
-                    [
-                        "v57.0",
-                        0.32
-                    ],
-                    [
-                        "v56.0",
-                        0.29
-                    ],
-                    [
-                        "v55.0",
-                        0.79
-                    ],
-                    [
-                        "v54.0",
-                        0.18
-                    ],
-                    [
-                        "v51.0",
-                        0.13
-                    ],
-                    [
-                        "v49.0",
-                        2.16
-                    ],
-                    [
-                        "v48.0",
-                        0.13
-                    ],
-                    [
-                        "v47.0",
-                        0.11
-                    ],
-                    [
-                        "v43.0",
-                        0.17
-                    ],
-                    [
-                        "v29.0",
-                        0.26
-                    ]
-                ]
-            },
-            {
-                "name": "Firefox",
-                "id": "Firefox",
-                "data": [
-                    [
-                        "v58.0",
-                        1.02
-                    ],
-                    [
-                        "v57.0",
-                        7.36
-                    ],
-                    [
-                        "v56.0",
-                        0.35
-                    ],
-                    [
-                        "v55.0",
-                        0.11
-                    ],
-                    [
-                        "v54.0",
-                        0.1
-                    ],
-                    [
-                        "v52.0",
-                        0.95
-                    ],
-                    [
-                        "v51.0",
-                        0.15
-                    ],
-                    [
-                        "v50.0",
-                        0.1
-                    ],
-                    [
-                        "v48.0",
-                        0.31
-                    ],
-                    [
-                        "v47.0",
-                        0.12
-                    ]
-                ]
-            },
-            {
-                "name": "Internet Explorer",
-                "id": "Internet Explorer",
-                "data": [
-                    [
-                        "v11.0",
-                        6.2
-                    ],
-                    [
-                        "v10.0",
-                        0.29
-                    ],
-                    [
-                        "v9.0",
-                        0.27
-                    ],
-                    [
-                        "v8.0",
-                        0.47
-                    ]
-                ]
-            },
-            {
-                "name": "Safari",
-                "id": "Safari",
-                "data": [
-                    [
-                        "v11.0",
-                        3.39
-                    ],
-                    [
-                        "v10.1",
-                        0.96
-                    ],
-                    [
-                        "v10.0",
-                        0.36
-                    ],
-                    [
-                        "v9.1",
-                        0.54
-                    ],
-                    [
-                        "v9.0",
-                        0.13
-                    ],
-                    [
-                        "v5.1",
-                        0.2
-                    ]
-                ]
-            },
-            {
-                "name": "Edge",
-                "id": "Edge",
-                "data": [
-                    [
-                        "v16",
-                        2.6
-                    ],
-                    [
-                        "v15",
-                        0.92
-                    ],
-                    [
-                        "v14",
-                        0.4
-                    ],
-                    [
-                        "v13",
-                        0.1
-                    ]
-                ]
-            },
-            {
-                "name": "Opera",
-                "id": "Opera",
-                "data": [
-                    [
-                        "v50.0",
-                        0.96
-                    ],
-                    [
-                        "v49.0",
-                        0.82
-                    ],
-                    [
-                        "v12.1",
-                        0.14
-                    ]
-                ]
-            }
-        ]
-    }
+    }]
 });
 		</script>
-	</body>
+		<div class="container">
+		<br><br><br>
+  <h2 style="margin-top: 600px;">Last 3 Transactions</h2>
+		  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Spent On</th>
+        <th>Amount(In Euro)</th>
+        <th>Transaction Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Shelter</td>
+        <td>1401</td>
+        <td>25-April-2018</td>
+      </tr>
+      <tr>
+        <td>Books</td>
+        <td>131</td>
+        <td>31-May-2018</td>
+      </tr>
+      <tr>
+        <td>Cleaning</td>
+        <td>212</td>
+        <td>1-June-2018</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+		
+</body>
 </html>
